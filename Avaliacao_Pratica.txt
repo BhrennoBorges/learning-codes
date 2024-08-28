@@ -1,0 +1,72 @@
+import math
+
+def calcular_volume_esfera():
+    raio = float(input("Digite o raio da esfera: "))
+    volume = (4/3) * math.pi * (raio ** 3)
+    print(f"O volume da esfera é: {volume:.2f}")
+    print("\nVoltando ao menu principal...")
+    Avaliacao_Pratica()
+
+def calcular_distancia_pontos():
+    x1 = float(input("Digite x1: "))
+    y1 = float(input("Digite y1: "))
+    x2 = float(input("Digite x2: "))
+    y2 = float(input("Digite y2: "))
+    distancia = math.sqrt((x2 - x1)**2 + (y2 - y1)**2)
+    print(f"A distância entre os pontos é: {distancia:.2f}")
+    print("\nVoltando ao menu principal...")
+    Avaliacao_Pratica()
+
+def classificar_valores():
+    a = int(input("Digite o primeiro valor inteiro: "))
+    b = int(input("Digite o segundo valor inteiro: "))
+    
+    if a < b:
+        print(f"Os valores em ordem crescente são: {a} e {b}")
+    elif a > b:
+        print(f"Os valores em ordem crescente são: {b} e {a}")
+    else:
+        print(f"Os valores são iguais: {a} e {b}")
+    print("\nVoltando ao menu principal...")
+    Avaliacao_Pratica()
+
+def calcular_peso_ideal():
+    genero = input("Digite o gênero (homem/mulher): ").lower() 
+
+    if genero == "homem":
+        peso_ideal = (72.7 * altura) - 58
+        print(f"O peso ideal para um homem de {altura:.2f} metros é: {peso_ideal:.2f} kg")
+    elif genero == "mulher":
+        peso_ideal = (62.1 * altura) - 44.7
+        print(f"O peso ideal para uma mulher de {altura:.2f} metros é: {peso_ideal:.2f} kg")
+    else:
+        print("Gênero inválido.")
+    print("\nVoltando ao menu principal...")
+    Avaliacao_Pratica()
+
+def Avaliacao_Pratica():
+    print("\nEscolha o exercício que deseja executar:")
+    print("a) Calcular o volume de uma esfera")
+    print("b) Calcular a distância entre dois pontos")
+    print("c) Classificar dois valores em ordem crescente")
+    print("d) Calcular o peso ideal")
+    print("e) Sair")
+
+    escolha = input("Digite a letra correspondente ao exercício (a, b, c, d, e): ").lower()
+
+    if escolha == 'a':
+        calcular_volume_esfera()
+    elif escolha == 'b':
+        calcular_distancia_pontos()
+    elif escolha == 'c':
+        classificar_valores()
+    elif escolha == 'd':
+        calcular_peso_ideal()
+    elif escolha == 'e':
+        print("Saindo...")
+        return
+    else:
+        print("Escolha inválida.")
+        Avaliacao_Pratica()
+
+Avaliacao_Pratica()

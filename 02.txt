@@ -1,0 +1,13 @@
+
+nota1 = float(input("Bota sua nota aí, Zé: "))
+nota2 = float(input("Bota sua segunda nota aí, Zé: "))
+
+
+media = (nota1 + nota2) / 2
+
+if media >= 5:
+    print(f"Aprovado {media:.2f}")
+elif media >= 3:
+    print(f"Em recuperação {media:.2f}")
+else:
+    print(f"Reprovado {media:.2f}")
