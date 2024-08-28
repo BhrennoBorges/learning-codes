@@ -1,0 +1,34 @@
+
+import math
+
+def resolver_equacao_2_grau(a, b, c):
+
+    delta = b**2 - 4*a*c
+    print(f"Discriminante (delta): {delta}")
+
+    if (a==0 or b==0 or c==0):
+        print(delta)
+    elif delta > 0:
+       
+        raiz1 = (-b + math.sqrt(delta)) / (2 * a)
+        raiz2 = (-b - math.sqrt(delta)) / (2 * a)
+        return raiz1, raiz2
+    elif delta == 0:
+      
+        raiz = -b / (2 * a)
+        return raiz,
+    else:
+       
+        parte_real = -b / (2 * a)
+        parte_imaginaria = math.sqrt(-delta) / (2 * a)
+        raiz1 = complex(parte_real, parte_imaginaria)
+        raiz2 = complex(parte_real, -parte_imaginaria)
+        return raiz1, raiz2
+
+
+a = float(input("digite o valor"))
+b = float(input("digite o valor"))
+c = float(input("digite o valor"))
+
+resultado = resolver_equacao_2_grau(a, b, c)
+print("As raízes da equação são:", resultado)
