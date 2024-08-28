@@ -1,0 +1,16 @@
+def pode_votar(idade):
+    return idade >= 16 and idade <= 17
+
+def pode_obter_cnh(idade):
+    return idade >= 18
+
+idade = int(input("Qual é a sua idade? "))
+
+if pode_votar(idade) and pode_obter_cnh(idade):
+    print("Você pode votar e obter a CNH!")
+elif pode_votar(idade):
+    print("Você pode votar, mas ainda não pode obter a CNH e votar.")
+elif pode_obter_cnh(idade):
+    print("Você pode obter a CNH, mas ainda não pode votar.")
+else:
+    print("Você ainda não pode votar nem obter a CNH.")
